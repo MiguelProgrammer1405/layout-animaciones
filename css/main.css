@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+}
+
+.banner-nav {
+  background: black;
+  height: 100px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: -2;
+}
+
+.title-nav {
+  margin-bottom: 0.5rem;
+  background: white;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  position: relative;
+  border: 2px solid black;
+}
+
+.title-nav::before {
+  content: "";
+  position: absolute;
+  top: 20%;
+  left: -10%;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: white;
+  z-index: -1;
+}
+
+/* nav menu */
+
+.nav-center {
+  background: black;
+  width: 100%;
+}
+
+.nav-menu {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 900px;
+  background: black;
+  color: white;
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  list-style-type: none;
+  box-shadow: -3px 7px 28px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -3px 7px 28px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -3px 7px 28px -3px rgba(0, 0, 0, 0.75);
+}
+
+.menu-item {
+  padding: 1rem 2em;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-item:hover {
+  background: white;
+  color: black;
+  padding-left: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+  }
+  .menu-item {
+    padding: 1rem 1rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .menu-item::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    left: 0;
+    top: 80%;
+    height: 2px;
+    background: red;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .menu-item:hover {
+    padding-left: 1rem;
+    background: black;
+    color: white;
+    cursor: pointer;
+    color: red;
+  }
+
+  .menu-item:hover::after {
+    width: 100%;
+  }
+}
+
+/* sidebar */
+
+.icons-container {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 0;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.icon-1 {
+  background: #395498;
+}
+.icon-2 {
+  background: #000000;
+}
+.icon-3 {
+  background: #f40781;
+}
+.icon-4 {
+  background: #1ad03f;
+}
+.icon-5 {
+  background: #34a9da;
+}
+
+.icon:hover {
+  width: 70px;
+  padding-left: 2rem;
+  background: black;
+}
+
+@media screen and (min-width: 768px) {
+  .icons-container {
+    top: 30%;
+  }
+}
+
+/* text content */
+
+.text-content {
+  width: 70%;
+  margin: 3rem auto 0;
+  max-width: 900px;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .text-content {
+    margin-top: 6rem;
+  }
+}
+
+/* div animated */
+
+.div-animated {
+  width: 100px;
+  height: 100px;
+  border-top: 15px solid #f40781;
+  border-left: 15px solid yellow;
+  border-bottom: 15px solid blueviolet;
+  border-right: 15px solid royalblue;
+  margin: 4rem auto;
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+.div-animated:hover {
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* btn */
+
+.btn {
+  display: block;
+  border: 2px solid black;
+  padding: 0.7rem 0.7rem;
+  background: black;
+  color: white;
+  border-radius: 5%;
+  margin: 0 auto 3rem;
+  transition: all 0.5s linear;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background: white;
+  color: black;
+  animation: hovering 1s linear;
+}
+
+@keyframes hovering {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.2);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
